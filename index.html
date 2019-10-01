@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
     integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
   <link rel="stylesheet" href="css/main.css">
 
   <meta name="theme-color" content="#fafafa">
@@ -59,10 +60,10 @@
         <span></span>
       </div>
       <nav class="navegacion-principal clearfix">
-        <a href="#">Conferencia</a>
+        <a href="conferencia.html">Conferencia</a>
         <a href="#">Calendario</a>
         <a href="#">Invitados</a>
-        <a href="#">Reservaciones</a>
+        <a href="registro.html">Reservaciones</a>
       </nav>
     </div>
   </div>
@@ -76,7 +77,7 @@
   </section>
   <section class="programa">
     <div class="contenedor-video">
-      <video autoplay loop >
+      <video autoplay loop>
         <source src="video/video.mp4" type="video/mp4">
         <source src="video/video.webm" type="video/webm">
         <source src="video/video.ogv" type="video/ogg">
@@ -92,7 +93,7 @@
             <a href="#conferencias"><i class="fa fa-comment"></i>Conferencias</a>
             <a href="#seminarios"><i class="fa fa-university"></i>Seminarios</a>
           </nav>
-          <div id="talleres" class="info-curso olcultar clearfix">
+          <div id="talleres" class="info-curso ocultar clearfix">
             <div class="detalle-evento">
               <h3>HTML5, CSS3 y JavaScript</h3>
               <p><i class="fa fa-clock"></i>16:00 hrs</p>
@@ -110,6 +111,43 @@
             <a href="#" class="button float-right">Ver Todos</a>
           </div>
           <!--talleres-->
+          <div id="conferencias" class="info-curso ocultar clearfix">
+            <div class="detalle-evento">
+              <h3>Como ser Freelancer</h3>
+              <p><i class="fa fa-clock"></i>10:00 hrs</p>
+              <p><i class="fa fa-calendar"></i>10 de Dic</p>
+              <p><i class="fa fa-user"></i>Ricardo Milos</p>
+            </div>
+            <!--fin 1 evento-->
+            <div class="detalle-evento">
+              <h3>Tecnologias del futuro</h3>
+              <p><i class="fa fa-clock"></i>10:00 hrs</p>
+              <p><i class="fa fa-calendar"></i>10 de Dic</p>
+              <p><i class="fa fa-user"></i>Carla Gonzales</p>
+            </div>
+            <!--fin 2 evento-->
+            <a href="#" class="button float-right">Ver Todos</a>
+          </div>
+          <!--conferencias-->
+          <div id="seminarios" class="info-curso ocultar clearfix">
+            <div class="detalle-evento">
+              <h3>Diseño UI/UX para moviles</h3>
+              <p><i class="fa fa-clock"></i>17:00 hrs</p>
+              <p><i class="fa fa-calendar"></i>11 de Dic</p>
+              <p><i class="fa fa-user"></i>Hernan Cattaneo</p>
+            </div>
+            <!--fin 1 evento-->
+            <div class="detalle-evento">
+              <h3>Aprende a programar en una mañana</h3>
+              <p><i class="fa fa-clock"></i>20:00 hrs</p>
+              <p><i class="fa fa-calendar"></i>11 de Dic</p>
+              <p><i class="fa fa-user"></i>Juan Perez</p>
+            </div>
+            <!--fin 2 evento-->
+            <a href="#" class="button float-right">Ver Todos</a>
+          </div>
+          <!--seminarios-->
+          
         </div>
         <!--programa evento-->
       </div>
@@ -170,16 +208,16 @@
     <div class="contenedor">
       <ul class="resumen-evento clearfix">
         <li>
-          <p class="numero">6</p> Invitados
+          <p class="numero"></p> Invitados
         </li>
         <li>
-          <p class="numero">15</p> Talleres
+          <p class="numero"></p> Talleres
         </li>
         <li>
-          <p class="numero">3</p> Dias
+          <p class="numero"></p> Dias
         </li>
         <li>
-          <p class="numero">9</p> Conferencias
+          <p class="numero"></p> Conferencias
         </li>
       </ul>
     </div>
@@ -232,7 +270,7 @@
     </div>
   </section>
   <div id="mapa" class="mapa">
-    <p>Aca va un mapa</p>
+    
   </div>
   <section class="seccion">
     <h2>Testimoniales</h2>
@@ -290,16 +328,16 @@
     <div class="cuenta-regresiva contenedor">
       <ul class="clearfix">
         <li>
-          <p class="numero">80</p>Dias
+          <p id="dias" class="numero"></p>Dias
         </li>
         <li>
-          <p class="numero">15</p>Horas
+          <p id="horas" class="numero"></p>Horas
         </li>
         <li>
-          <p class="numero">5</p>Minutos
+          <p id="minutos" class="numero"></p>Minutos
         </li>
         <li>
-          <p class="numero">30</p>Segundos
+          <p id="segundos" class="numero"></p>Segundos
         </li>
       </ul>
     </div>
@@ -347,6 +385,10 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/jquery.lettering.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
 
